@@ -87,6 +87,7 @@ header{padding:38px 0 0}
 .scarcity{background:var(--paper-warm);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .scarcity .wrap{padding:18px 32px;font-size:13.5px;color:var(--ink-soft);text-align:center}
 .scarcity strong{font-weight:400;color:var(--madder)}
+.cd{color:var(--madder);font-variant-numeric:tabular-nums;white-space:nowrap}
 
 .midcta{text-align:center;margin-top:66px;display:flex;flex-direction:column;align-items:center;gap:13px}
 .midcta span{font-size:13px;color:var(--ink-soft)}
@@ -121,7 +122,11 @@ header{padding:38px 0 0}
 
 .closer{background:var(--paper-warm);border-top:1px solid var(--rule);text-align:center}
 .closer h2{margin-bottom:14px}
-.closer p{color:var(--ink-soft);max-width:44ch;margin:0 auto 32px}
+.closer p{color:var(--ink-soft);max-width:46ch;margin:0 auto 32px}
+.share{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;
+  font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.share a{color:var(--madder);text-decoration:none;border-bottom:1px solid rgba(140,47,30,.32);padding-bottom:2px;transition:.15s}
+.share a:hover{border-color:var(--madder)}
 
 .rule{height:1px;background:var(--rule);border:0;margin:0}
 .section{padding:90px 0}
@@ -238,7 +243,7 @@ footer{border-top:1px solid var(--rule);padding:38px 0 64px;font-size:12px;color
 </div>
 
 <div class="scarcity">
-  <div class="wrap"><strong>The founding fifty.</strong> Reservations close 30 September. The first fifty lock the founding price of $95, against $110 at launch — and you pay nothing until you decide.</div>
+  <div class="wrap"><strong>The founding fifty.</strong> Reservations close 30 September — <span id="countdown" class="cd">calculating…</span>. The first fifty lock the founding price of $95, against $110 at launch, and you pay nothing until you decide.</div>
 </div>
 
 <div class="wrap">
@@ -378,6 +383,7 @@ footer{border-top:1px solid var(--rule);padding:38px 0 64px;font-size:12px;color
     <div class="maker">
       <div class="sig">Shreya</div>
       <div>
+        <p>These patterns are not a market I found. They are the one I come from — Persian and Mughal work that travelled into Punjab and never left, redrawn for something you can actually wear.</p>
         <p>I am one person, not a company. I am doing an MBA, working full time, and building this in the evenings because I could not find a silk square that carried Indian design without either flattening it into a generic paisley or charging me five hundred dollars for the privilege.</p>
         <p>I would rather tell you that now than have you find out later. Everything on this page that sounds like a promise is one, and it is mine to keep. If something goes wrong, you will hear it from me directly.</p>
       </div>
@@ -434,8 +440,15 @@ footer{border-top:1px solid var(--rule);padding:38px 0 64px;font-size:12px;color
 <section class="closer">
   <div class="wrap section">
     <h2>Fifty scarves</h2>
-    <p>Reservations close 30 September. The design with the most reservations is the one that gets made.</p>
+    <p>Reservations close 30 September. The design with the most reservations is the one that gets made — so the fastest way to get yours made is to bring a few more people to the vote.</p>
     <a class="btn" href="#reserve">Reserve your place</a>
+    <div class="share">
+      <span>Send it to someone</span>
+      <a href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fsitaraatelier.com%2F&media=https%3A%2F%2Fsitaraatelier.com%2Fimg%2Fpeacock.jpg&description=Sitara%20%E2%80%94%20a%20silk%20square%20worth%20keeping.%20Three%20designs%3B%20you%20decide%20which%20gets%20made." target="_blank" rel="noopener">Pinterest</a>
+      <a href="https://wa.me/?text=Sitara%20%E2%80%94%20a%20silk%20square%20worth%20keeping.%20Reserve%20one%20free%20and%20pick%20which%20design%20gets%20made%3A%20https%3A%2F%2Fsitaraatelier.com%2F" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:?subject=A%20silk%20square%20worth%20keeping&body=Thought%20of%20you.%20You%20can%20reserve%20one%20free%20and%20vote%20on%20the%20design%3A%20https%3A%2F%2Fsitaraatelier.com%2F" target="_blank" rel="noopener">Email</a>
+      <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fsitaraatelier.com%2F&text=A%20silk%20square%20worth%20keeping%20%E2%80%94%20three%20designs%2C%20you%20decide%20which%20gets%20made." target="_blank" rel="noopener">X</a>
+    </div>
   </div>
 </section>
 
@@ -455,6 +468,21 @@ document.querySelectorAll('[data-pick]').forEach(function(a){
     });
   });
 });
+(function(){
+  var el = document.getElementById('countdown');
+  if (!el) return;
+  var end = new Date('2026-09-30T23:59:59');
+  function tick(){
+    var diff = end - new Date();
+    if (diff <= 0){ el.textContent = 'reservations are now closed'; return; }
+    var d = Math.floor(diff/86400000),
+        h = Math.floor(diff%86400000/3600000),
+        m = Math.floor(diff%3600000/60000);
+    el.textContent = d + ' days ' + h + ' hrs ' + m + ' min left';
+  }
+  tick();
+  setInterval(tick, 60000);
+})();
 </script>
 </body>
 </html>
