@@ -78,6 +78,24 @@ header{padding:38px 0 0}
 .btn-sm:hover{background:var(--madder);color:#FAF6EF}
 .herocta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:36px}
 .btnnote{font-size:13px;color:var(--ink-soft);max-width:22ch;line-height:1.5}
+.herospecs{list-style:none;display:flex;flex-wrap:wrap;gap:9px 22px;margin:26px 0 0;padding:0;
+  font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.herospecs li{position:relative;padding-left:18px}
+.herospecs li::before{content:"";position:absolute;left:0;top:50%;width:5px;height:5px;margin-top:-2.5px;
+  border-radius:50%;background:var(--gold)}
+
+.scarcity{background:var(--paper-warm);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.scarcity .wrap{padding:18px 32px;font-size:13.5px;color:var(--ink-soft);text-align:center}
+.scarcity strong{font-weight:400;color:var(--madder)}
+
+.midcta{text-align:center;margin-top:66px;display:flex;flex-direction:column;align-items:center;gap:13px}
+.midcta span{font-size:13px;color:var(--ink-soft)}
+
+.assure{list-style:none;display:flex;flex-wrap:wrap;gap:11px 26px;margin:0 0 26px;padding:0;
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(239,231,214,.72)}
+.assure li{position:relative;padding-left:19px}
+.assure li::before{content:"";position:absolute;left:0;top:50%;width:6px;height:6px;margin-top:-3px;
+  border:1px solid var(--gold);border-radius:50%}
 
 .why{max-width:760px}
 .whygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);
@@ -195,6 +213,12 @@ footer{border-top:1px solid var(--rule);padding:38px 0 64px;font-size:12px;color
         <div class="kicker">First edition · Fifty scarves · Ships November 2026</div>
         <h1>A silk square worth <em>keeping</em>.</h1>
         <p class="sell">Ninety centimetres of 16 momme mulberry twill, edges rolled and stitched by hand. Three designs drawn from the Indian and Persian work that French silk has borrowed from for three hundred years. You decide which one I make first.</p>
+        <ul class="herospecs">
+          <li>90 × 90 cm</li>
+          <li>16 momme mulberry silk</li>
+          <li>Hand-rolled edges</li>
+          <li>Ships Nov 2026</li>
+        </ul>
         <div class="herocta">
           <a class="btn" href="#reserve">Reserve your place</a>
           <span class="btnnote">No payment now. Lock the founding price, decide later.</span>
@@ -211,6 +235,10 @@ footer{border-top:1px solid var(--rule);padding:38px 0 64px;font-size:12px;color
   <img src="img/hanging.jpg" alt="A silk square in deep indigo with gold peacock feathers, hanging flat." loading="lazy" width="706" height="1254">
   <img src="img/corner.jpg" alt="Close detail of a cream corner cartouche with gold flowers against indigo silk." loading="lazy" width="706" height="1254">
   <img src="img/draped.jpg" alt="The same silk square draped and folded, showing how the pattern moves." loading="lazy" width="706" height="1254">
+</div>
+
+<div class="scarcity">
+  <div class="wrap"><strong>The founding fifty.</strong> Reservations close 30 September. The first fifty lock the founding price of $95, against $110 at launch — and you pay nothing until you decide.</div>
 </div>
 
 <div class="wrap">
@@ -272,6 +300,11 @@ footer{border-top:1px solid var(--rule);padding:38px 0 64px;font-size:12px;color
         </div>
       </article>
 
+    </div>
+
+    <div class="midcta">
+      <a class="btn" href="#reserve">Reserve your place — no payment now</a>
+      <span>Pick your favourite. Nothing to pay today; you decide when the edition is made.</span>
     </div>
   </section>
 </div>
@@ -371,6 +404,11 @@ footer{border-top:1px solid var(--rule);padding:38px 0 64px;font-size:12px;color
             <label for="c3"><span class="cn">No. 03</span><span class="ct">Champa Dusk</span></label></div>
         </div>
       </fieldset>
+      <ul class="assure">
+        <li>No card, no charge</li>
+        <li>Cancel anytime</li>
+        <li>Money-back guarantee</li>
+      </ul>
       <div class="field-row">
         <input type="email" name="email" placeholder="Your email" required aria-label="Your email address">
         <button type="submit">Reserve my place</button>
