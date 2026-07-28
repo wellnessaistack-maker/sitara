@@ -12,7 +12,7 @@
 <meta property="og:description" content="Three designs. One gets made first. Tell us which one.">
 <meta property="og:url" content="https://sitaraatelier.com/">
 <meta property="og:site_name" content="Sitara">
-<meta property="og:image" content="https://sitaraatelier.com/img/peacock.jpg">
+<meta property="og:image" content="img/peacock.jpg">
 <meta property="og:image:alt" content="A silk square in deep indigo with gold peacock feathers and cream corner cartouches.">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -20,10 +20,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Sitara","url":"https://sitaraatelier.com/","description":"A small silk scarf line drawing on the Indian textile lineage behind French printed cotton.","logo":"https://sitaraatelier.com/img/peacock.jpg"}
+{"@context":"https://schema.org","@type":"Organization","name":"Sitara","url":"https://sitaraatelier.com/","description":"A small silk scarf line drawing on the Indian textile lineage behind French printed cotton.","logo":"img/peacock.jpg"}
 </script>
 
 <style>
@@ -45,20 +45,30 @@ body{margin:0;background:var(--paper);color:var(--ink);
 img{max-width:100%;display:block}
 h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;margin:0;letter-spacing:.005em}
 a{color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 30px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 32px}
 .narrow{max-width:660px}
 .skip{position:absolute;left:-9999px}
 .skip:focus{left:14px;top:14px;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:9}
 
-header{padding:40px 0 0}
+/* a hairline gold accent on kickers, for quiet richness */
+.kicker{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--madder);
+  margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:26px;height:1px;background:var(--gold);flex:none}
+
+header{padding:38px 0 0}
 .brandline{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.brand{font-family:"Cormorant Garamond",serif;font-size:24px;letter-spacing:.4em;text-transform:uppercase}
+.brand{font-family:"Cormorant Garamond",serif;font-size:25px;letter-spacing:.42em;text-transform:uppercase}
 .brandmeta{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
 
-.hero{padding:96px 0 88px}
-.hero h1{font-size:clamp(36px,5.6vw,62px);line-height:1.1;max-width:15ch}
+/* HERO — lead with the object */
+.hero{padding:72px 0 92px}
+.herogrid{display:grid;grid-template-columns:1.02fr .98fr;gap:64px;align-items:center}
+@media(max-width:880px){.herogrid{grid-template-columns:1fr;gap:36px}.heroimg{order:-1}}
+.hero h1{font-size:clamp(38px,5.8vw,66px);line-height:1.06;max-width:14ch}
 .hero h1 em{font-style:italic;color:var(--madder)}
-.hero p{font-size:clamp(16px,1.7vw,18.5px);color:var(--ink-soft);margin:32px 0 0;max-width:52ch}
+.hero .sell{font-size:clamp(16px,1.7vw,18.5px);color:var(--ink-soft);margin:30px 0 0;max-width:46ch}
+.heroimg{background:var(--paper-warm);padding:20px;line-height:0;box-shadow:0 1px 0 var(--rule)}
+.heroimg img{width:100%;height:auto}
 
 .btn{display:inline-block;background:var(--madder);color:#FAF6EF;text-decoration:none;
   padding:16px 34px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;transition:.18s}
@@ -66,8 +76,8 @@ header{padding:40px 0 0}
 .btn-sm{padding:12px 24px;font-size:10.5px;margin-top:20px;background:transparent;
   color:var(--madder);border:1px solid var(--madder)}
 .btn-sm:hover{background:var(--madder);color:#FAF6EF}
-.herocta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:38px}
-.btnnote{font-size:13px;color:var(--ink-soft)}
+.herocta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:36px}
+.btnnote{font-size:13px;color:var(--ink-soft);max-width:22ch;line-height:1.5}
 
 .why{max-width:760px}
 .whygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);
@@ -96,12 +106,11 @@ header{padding:40px 0 0}
 .closer p{color:var(--ink-soft);max-width:44ch;margin:0 auto 32px}
 
 .rule{height:1px;background:var(--rule);border:0;margin:0}
-.section{padding:88px 0}
-.kicker{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--madder);margin-bottom:20px}
-.section h2{font-size:clamp(25px,3.3vw,34px);margin-bottom:16px}
+.section{padding:90px 0}
+.section h2{font-size:clamp(25px,3.3vw,35px);margin-bottom:16px}
 .lede{color:var(--ink-soft);max-width:58ch;margin:0}
 
-.designs{display:grid;gap:84px;margin-top:60px}
+.designs{display:grid;gap:86px;margin-top:60px}
 .design{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .design .plate{order:1}
 .design .copy{order:2}
@@ -135,8 +144,9 @@ header{padding:40px 0 0}
 
 .ask{background:var(--lapis);color:#EFE7D6}
 .ask h2,.ask .kicker{color:#EFE7D6}
-.ask .kicker{color:rgba(239,231,214,.55)}
-.ask .lede{color:rgba(239,231,214,.7)}
+.ask .kicker{color:rgba(239,231,214,.62)}
+.ask .kicker::before{background:var(--gold)}
+.ask .lede{color:rgba(239,231,214,.72)}
 .choices{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:38px 0 24px}
 @media(max-width:700px){.choices{grid-template-columns:1fr}}
 .choice input{position:absolute;opacity:0;width:0;height:0}
@@ -156,7 +166,7 @@ textarea{margin-top:11px;resize:vertical;min-height:74px}
 button{background:#EFE7D6;color:var(--ink);border:0;padding:15px 36px;font-family:Inter,sans-serif;
   font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:.18s}
 button:hover{background:#fff}
-.finehint{font-size:12.5px;color:rgba(239,231,214,.55);margin-top:18px}
+.finehint{font-size:12.5px;color:rgba(239,231,214,.55);margin-top:18px;max-width:52ch}
 
 .story p{color:var(--ink-soft);margin:0 0 20px;font-size:16px}
 .story p strong{font-weight:400;color:var(--ink)}
@@ -180,20 +190,27 @@ footer{border-top:1px solid var(--rule);padding:38px 0 64px;font-size:12px;color
   </header>
 
   <section class="hero">
-    <div class="kicker">First edition · Fifty scarves · Ships November 2026</div>
-    <h1>A silk square worth <em>keeping</em>.</h1>
-    <p>Ninety centimetres of 16 momme mulberry twill, printed in Hangzhou, edges rolled and stitched by hand. One hundred and ten dollars, or ninety five if you reserve one now. Three designs, fifty scarves, and the one that gets the most reservations is the one I make.</p>
-    <div class="herocta">
-      <a class="btn" href="#reserve">Reserve yours · $25 deposit</a>
-      <span class="btnnote">Refundable in full, any time, for any reason.</span>
+    <div class="herogrid">
+      <div class="herocopy">
+        <div class="kicker">First edition · Fifty scarves · Ships November 2026</div>
+        <h1>A silk square worth <em>keeping</em>.</h1>
+        <p class="sell">Ninety centimetres of 16 momme mulberry twill, edges rolled and stitched by hand. Three designs drawn from the Indian and Persian work that French silk has borrowed from for three hundred years. You decide which one I make first.</p>
+        <div class="herocta">
+          <a class="btn" href="#reserve">Reserve your place</a>
+          <span class="btnnote">No payment now. Lock the founding price, decide later.</span>
+        </div>
+      </div>
+      <div class="heroimg">
+        <img src="img/peacock.jpg" alt="Peacock Night: a deep indigo silk square with gold peacock feathers, small cream florals and cream corner cartouches." width="1254" height="1254">
+      </div>
     </div>
   </section>
 </div>
 
 <div class="plates">
-  <img src="img/hanging.jpg" alt="A silk square in deep indigo with gold peacock feathers, hanging flat." loading="lazy" width="788" height="1400">
-  <img src="img/corner.jpg" alt="Close detail of a cream corner cartouche with gold flowers against indigo silk." loading="lazy" width="788" height="1400">
-  <img src="img/draped.jpg" alt="The same silk square draped and folded, showing how the pattern moves." loading="lazy" width="788" height="1400">
+  <img src="img/hanging.jpg" alt="A silk square in deep indigo with gold peacock feathers, hanging flat." loading="lazy" width="706" height="1254">
+  <img src="img/corner.jpg" alt="Close detail of a cream corner cartouche with gold flowers against indigo silk." loading="lazy" width="706" height="1254">
+  <img src="img/draped.jpg" alt="The same silk square draped and folded, showing how the pattern moves." loading="lazy" width="706" height="1254">
 </div>
 
 <div class="wrap">
@@ -263,10 +280,10 @@ footer{border-top:1px solid var(--rule);padding:38px 0 64px;font-size:12px;color
   <div class="wrap section">
     <div class="kicker">Specification</div>
     <h2>What you would receive</h2>
-    <p class="lede">This is what we are quoting to mills, not a wish list.</p>
+    <p class="lede">This is what I am quoting to mills, not a wish list.</p>
     <dl class="speclist">
       <div><dt>Dimensions</dt><dd>90 × 90 cm<small>The classic square. Big enough to knot at the neck or wear open, and big enough that the pattern actually reads.</small></dd></div>
-      <div><dt>Cloth</dt><dd>16 momme twill<small>100% mulberry silk, 6A grade. Momme is weight. At 16 it has body and drape instead of hanging limp.</small></dd></div>
+      <div><dt>Cloth</dt><dd>16 momme twill<small>100% mulberry silk, 6A grade, printed in Hangzhou. Momme is weight. At 16 it has body and drape instead of hanging limp.</small></dd></div>
       <div><dt>Edges</dt><dd>Hand rolled<small>Rolled and stitched by hand. An artisan finishes two or three in an hour, which is the whole reason it costs what it costs.</small></dd></div>
       <div><dt>Price</dt><dd>$110<small>Held there on purpose. Below this, either the silk or the finishing has to give, and you can feel which one did.</small></dd></div>
     </dl>
@@ -309,15 +326,15 @@ footer{border-top:1px solid var(--rule);padding:38px 0 64px;font-size:12px;color
     <div class="trustgrid">
       <div>
         <h3>You are not buying a finished scarf</h3>
-        <p>These three exist as artwork and a signed specification. Nothing has been printed yet. The first edition is fifty scarves and it only goes into production once fifty reservations exist, which is the honest reason the deposit is small.</p>
+        <p>These three exist as artwork and a signed specification. Nothing has been printed yet. The first edition is fifty scarves and it only goes into production once fifty reservations exist — which is exactly why I am asking for your email today, and not your money.</p>
+      </div>
+      <div>
+        <h3>Reserving costs nothing</h3>
+        <p>A reservation is your email and the design you would pick. No card, no deposit, no charge. When the edition is confirmed you get one email inviting you to complete the order at the founding price of $95. Don't want it by then? Ignore the email. That is the whole cancellation policy.</p>
       </div>
       <div>
         <h3>When it ships</h3>
         <p>Reservations close 30 September 2026. Production and hand finishing take six to eight weeks. Yours ships by 30 November. If that date slips by more than fourteen days you get an email offering a full refund before I ask you for anything else.</p>
-      </div>
-      <div>
-        <h3>Cancel whenever you like</h3>
-        <p>The deposit is refundable in full at any point before your scarf ships. One line of email is enough and you do not have to give a reason. After it arrives you have thirty days to send it back, and I pay the return postage.</p>
       </div>
       <div>
         <h3>If the silk is not what I said</h3>
@@ -337,9 +354,9 @@ footer{border-top:1px solid var(--rule);padding:38px 0 64px;font-size:12px;color
 
 <section class="ask" id="reserve">
   <div class="wrap section">
-    <div class="kicker">$25 now · $70 when it ships</div>
+    <div class="kicker">Reserve your place · No payment now</div>
     <h2>Reserve yours</h2>
-    <p class="lede">Twenty five dollars holds one at the founding price of ninety five, against a retail price of one hundred and ten. You pay the balance only when it ships, and you can cancel for a full refund at any point before that, no reason required and no email exchange about it.</p>
+    <p class="lede">Tell me which of the three you would want. It costs nothing today. You are locking the founding price of $95, against a retail price of $110, and if fifty people choose one design, that is the one I make. Two emails after this, ever: one when the edition is decided, one when yours is ready.</p>
 
     <!-- Replace YOUR_FORM_ID with your Formspree endpoint -->
     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
@@ -356,10 +373,10 @@ footer{border-top:1px solid var(--rule);padding:38px 0 64px;font-size:12px;color
       </fieldset>
       <div class="field-row">
         <input type="email" name="email" placeholder="Your email" required aria-label="Your email address">
-        <button type="submit">Reserve · $25</button>
+        <button type="submit">Reserve my place</button>
       </div>
       <textarea name="context" placeholder="Optional. Who or what is it for? It genuinely changes what I make next." aria-label="Optional context"></textarea>
-      <p class="finehint">You will be taken to Stripe to pay the deposit. I never see your card details. Two emails after that: one when the edition is decided, one when yours ships.</p>
+      <p class="finehint">No card, no charge, no catch — just your email and the design you would pick. You can change your mind at any time by simply not completing the order later.</p>
     </form>
   </div>
 </section>
@@ -370,6 +387,7 @@ footer{border-top:1px solid var(--rule);padding:38px 0 64px;font-size:12px;color
     <h2>The route home</h2>
     <p>Indian printed cottons reached Marseille in the early 1600s and held their colour in a way European cloth could not. France banned them in 1686 to protect its own industry and broke the printing blocks three years later. The ban lifted in 1759, and Oberkampf founded his manufactory at Jouy-en-Josas the following year. <strong>Toile de Jouy exists because the ban on Indian cotton ended.</strong> The small floral repeat the world now calls Provençal is an Indian print that changed its name.</p>
     <p class="pull">These are not borrowing from France. They are taking the same road back.</p>
+    <p>The design is Indian and Persian. The silk is printed in Hangzhou, which has made it for four thousand years — the one place with a longer claim to the cloth than Lyon has to the print. <strong>Neither is pretending to be French, and that is the entire point.</strong></p>
     <p><strong>What these are and are not.</strong> Original designs, developed digitally and printed on silk. Not block printed, not tie dyed, not embroidered. No artisan cluster made them and I do not use any protected craft name to sell them. If you want the handmade article, buy it from the people whose it is.</p>
   </section>
 </div>
@@ -379,7 +397,7 @@ footer{border-top:1px solid var(--rule);padding:38px 0 64px;font-size:12px;color
   <div class="wrap section">
     <h2>Fifty scarves</h2>
     <p>Reservations close 30 September. The design with the most reservations is the one that gets made.</p>
-    <a class="btn" href="#reserve">Reserve yours</a>
+    <a class="btn" href="#reserve">Reserve your place</a>
   </div>
 </section>
 
