@@ -124,7 +124,7 @@ a{color:inherit;text-decoration:none}
 /* LOOKBOOK full bleed */
 .lookbook{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .lookbook img{width:100%;height:clamp(340px,58vh,640px);object-fit:cover}
-@media(max-width:720px){.lookbook{grid-template-columns:1fr}.lookbook img{height:78vh}}
+@media(max-width:720px){.lookbook{grid-template-columns:1fr}.lookbook img{height:50vh}}
 
 /* SECTIONS */
 .section{padding:clamp(72px,12vh,140px) 0}
@@ -190,6 +190,17 @@ textarea{margin-top:11px;resize:vertical;min-height:70px}
 .assure li::before{content:"";position:absolute;left:0;top:50%;width:6px;height:6px;margin-top:-3px;border:1px solid var(--gold);border-radius:50%}
 .finehint{font-size:12.5px;color:rgba(239,231,214,.5);margin-top:18px;max-width:56ch}
 
+/* HOW THE DROP WORKS */
+.dropsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:44px}
+@media(max-width:760px){.dropsteps{grid-template-columns:1fr}}
+.step{background:var(--paper);padding:32px 28px}
+.step .n{font-family:"Cormorant Garamond",serif;font-size:34px;color:var(--madder);line-height:1}
+.step h3{font-size:21px;margin:14px 0 8px}
+.step p{font-size:14.5px;color:var(--ink-soft);margin:0;line-height:1.62}
+
+/* anchor offset so the fixed nav doesn't cover section tops */
+:where(#designs,#scarf,#drop,#reserve){scroll-margin-top:84px}
+
 /* STORY + FAQ */
 .story p{color:var(--ink-soft);margin:0 0 22px;font-size:17px}
 .faqlist{margin-top:44px;border-top:1px solid var(--rule)}
@@ -217,21 +228,23 @@ footer{padding:44px 0 60px;font-size:12px;color:var(--ink-soft);display:flex;jus
     <div class="links">
       <a href="#designs" class="hidephone">The scarves</a>
       <a href="#scarf" class="hidephone">The silk</a>
+      <a href="#drop" class="hidephone">How it works</a>
       <a href="#reserve" class="navcta">Reserve</a>
     </div>
   </div>
 </nav>
 
 <header id="top" class="hero">
+  <!-- PHOTO SLOT hero: swap for the real draped-on-a-person shot once samples are photographed. Update og:image + alt if you change it. -->
   <img class="heroimg" src="img/draped.jpg" alt="A Sitara silk square in deep indigo and gold, draped and folded to show how the pattern moves.">
   <div class="veil"></div>
   <div class="hero-content" data-reveal>
-    <div class="eyebrow" style="color:rgba(235,217,166,.8)">First edition · Fifty numbered scarves · Ships November 2026</div>
+    <div class="eyebrow" style="color:rgba(235,217,166,.8)">A numbered first edition of fifty · Ships November 2026</div>
     <h1 style="margin-top:22px">A silk square worth <em>keeping</em>.</h1>
-    <p class="sub">Ninety centimetres of 16-momme mulberry silk, edges rolled and stitched by hand. Two designs. Take your pick, and that is the one I make for you.</p>
+    <p class="sub">Two designs in 16-momme mulberry silk, a full ninety centimetres, edges rolled by hand. Reserve the one you want and get first access when the drop opens.</p>
     <div class="herorow">
       <a class="btn ghost" href="#reserve">Reserve your place</a>
-      <span class="heronote">No payment now. Reserving holds your place and first access when the drop opens.</span>
+      <span class="heronote">No card, no charge. Just tell me which one.</span>
     </div>
   </div>
   <div class="scrollcue">Scroll</div>
@@ -256,6 +269,7 @@ footer{padding:44px 0 60px;font-size:12px;color:var(--ink-soft);display:flex;jus
   </div>
 
   <article class="drow" data-reveal>
+    <!-- PHOTO SLOT design 01 Peacock Night: replace with the real flat/styled shot of this scarf -->
     <div class="art"><img src="img/peacock.jpg" alt="Peacock Night: deep indigo silk square with gold peacock feathers, small cream florals and cream corner cartouches." width="1254" height="1254"></div>
     <div class="copy">
       <div class="dno">No. 01</div>
@@ -270,6 +284,7 @@ footer{padding:44px 0 60px;font-size:12px;color:var(--ink-soft);display:flex;jus
   </article>
 
   <article class="drow" data-reveal>
+    <!-- PHOTO SLOT design 02 Saffron Crocus: replace with the real flat/styled shot of this scarf -->
     <div class="art"><img src="img/crocus.jpg" alt="Saffron Crocus: near black silk square with purple crocus flowers, a gold bowl of saffron threads and a deep madder red border." width="1254" height="1254"></div>
     <div class="copy">
       <div class="dno">No. 02</div>
@@ -285,6 +300,7 @@ footer{padding:44px 0 60px;font-size:12px;color:var(--ink-soft);display:flex;jus
 
 </section>
 
+<!-- PHOTO SLOT lookbook: three full-bleed shots. Best later as worn/lifestyle + one hem/corner detail. -->
 <div class="lookbook" aria-hidden="false">
   <img src="img/hanging.jpg" alt="A silk square hanging flat, showing the full pattern." loading="lazy">
   <img src="img/corner.jpg" alt="Close detail of a cream corner cartouche with gold flowers against indigo silk." loading="lazy">
@@ -321,7 +337,7 @@ footer{padding:44px 0 60px;font-size:12px;color:var(--ink-soft);display:flex;jus
 <section class="section band-warm">
   <div class="wrap" data-reveal>
     <div class="eyebrow">Before you reserve</div>
-    <h2>How this works, honestly</h2>
+    <h2>The honest part</h2>
     <p class="lede">Everything here is a plain description of what happens, so there are no surprises. If you want to know something that is not below, just ask me.</p>
     <div class="trustgrid">
       <div><h3>You are reserving, not buying yet</h3><p>I am making the first run, and reserving holds your place, the founding $95 price, and first access when the drop opens. Today you just tell me which design you want and leave your email. No card, no charge. When the drop opens I will email you to complete your order.</p></div>
@@ -335,6 +351,19 @@ footer{padding:44px 0 60px;font-size:12px;color:var(--ink-soft);display:flex;jus
         <p>It is just me. Not a big label, not a factory. That means the person who reads your email and packs your scarf is me, and it is also why I can only make a small first batch.</p>
         <p>Everything I have written on this page is true. I would rather under-promise and have you happy with what turns up than oversell and let you down. If something is ever wrong, you will hear about it from me directly.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="drop">
+  <div class="wrap why" data-reveal>
+    <div class="eyebrow">The drop</div>
+    <h2>How the drop works</h2>
+    <p class="lede">Three steps, no surprises. You reserve now, and you only pay when the drop opens.</p>
+    <div class="dropsteps">
+      <div class="step"><div class="n">1</div><h3>Reserve now</h3><p>Pick your design and leave your email. No card, no charge. This holds your place and locks the founding price of $95.</p></div>
+      <div class="step"><div class="n">2</div><h3>I open the drop</h3><p>Once the first run is confirmed, I email the reserved list before anyone else. You get first access to the fifty, in the order you reserved.</p></div>
+      <div class="step"><div class="n">3</div><h3>You complete it</h3><p>You pay the founding $95, after that it is $125. I hand-finish and number your scarf, and it ships by November. Change your mind any time before you pay.</p></div>
     </div>
   </div>
 </section>
@@ -364,6 +393,7 @@ footer{padding:44px 0 60px;font-size:12px;color:var(--ink-soft);display:flex;jus
           <p class="finehint">No card and no charge today. When the run is confirmed I will email you to complete your order. You can change your mind any time before then, you just do not complete it.</p>
         </form>
       </div>
+      <!-- PHOTO SLOT reserve: a single strong hero-quality shot beside the form -->
       <div class="rimg" data-reveal><img src="img/hanging.jpg" alt="A Sitara silk square hanging flat."></div>
     </div>
   </div>
